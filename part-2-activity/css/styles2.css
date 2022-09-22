@@ -1,0 +1,90 @@
+span {
+  font-size: 22px;
+  font-weight: 900;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  width: 100vw;
+  height: 100vh;
+}
+
+.load {
+  width: 30vh;
+  height: 22.5vh;
+  display: flex;
+  justify-content: space-evenly;
+}
+.load__bar {
+  background-color: #15DEA5;
+  height: 100%;
+  width: 3vh;
+  animation: bars 1000ms backwards infinite ease-in-out alternate;
+}
+.load__bar--1 {
+  animation-delay: 200ms;
+}
+.load__bar--1-inv {
+  animation-delay: 2550ms;
+  animation-direction: alternate-reverse;
+  background-color: #0E397F;
+}
+.load__bar--2 {
+  animation-delay: 400ms;
+}
+.load__bar--2-inv {
+  animation-delay: 1750ms;
+  animation-direction: alternate-reverse;
+  background-color: #0E397F;
+}
+.load__bar--3 {
+  animation-delay: 600ms;
+}
+.load__bar--3-inv {
+  animation-delay: 825ms;
+  animation-direction: alternate-reverse;
+  background-color: #0E397F;
+}
+.load__bar--4 {
+  animation-delay: 800ms;
+}
+.load__bar--4-inv {
+  animation-delay: 1125ms;
+  animation-direction: alternate-reverse;
+  background-color: #0E397F;
+}
+.load__bar--5 {
+  animation-delay: 1000ms;
+}
+.load__bar--5-inv {
+  animation-delay: 1425ms;
+  animation-direction: alternate-reverse;
+  background-color: #0E397F;
+}
+.load__bar:hover {
+  animation-play-state: paused;
+}
+
+@keyframes headshake {
+  25% {
+    transform: translateX(1%);
+  }
+  75% {
+    transform: translateX(-1%);
+  }
+}
+@keyframes bars {
+  0% {
+    transform: scaleY(0.5);
+  }
+  100% {
+    transform: scaleY(1);
+  }
+}
+
+/*# sourceMappingURL=styles2.css.map */

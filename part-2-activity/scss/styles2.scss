@@ -1,0 +1,70 @@
+$shake-intensity: 1%;
+$anim-dur: 1000ms;
+$cd-bars: #15DEA5;
+$cd-bars-inv: #0E397F;
+$size: 3vh;
+$anim-bars: 5;
+$anim-delay: $anim-dur / $anim-bars;
+
+span {
+    font-size: 22px;
+    font-weight: 900;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 100vw;
+    height: 100vh;
+}
+
+
+
+.load {
+    width: $size*10;
+    height: $size*7.5;
+    display: flex;
+    justify-content: space-evenly;
+    &__bar {
+        background-color: #15DEA5;
+        height: 100%;
+        width: $size;
+        animation: bars $anim-dur backwards infinite ease-in-out alternate;
+        @for $i from 1 through $anim-bars {
+            &--#{$i} {
+                animation-delay: $anim-delay * $i;
+            }
+            &--#{$i}-inv {
+                animation-delay: $anim-delay * $i + random(100)*25ms;
+                animation-direction: alternate-reverse;
+                background-color: $cd-bars-inv;
+            }
+        }
+        &:hover {
+            animation-play-state: paused;
+        }
+    }
+}
+
+@keyframes headshake {
+    25% {
+        transform: translateX($shake-intensity);
+    }
+    75% {
+        transform: translateX(-$shake-intensity);
+    }
+}
+
+@keyframes bars {
+    0% {
+        transform: scaleY(0.5);
+    }
+    100% {
+        transform: scaleY(1);
+    }
+
+    }
